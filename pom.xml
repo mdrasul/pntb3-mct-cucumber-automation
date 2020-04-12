@@ -68,7 +68,7 @@
 		<plugins>
 
 			<!-- ####### Maven Can you Compile the Project For me ######### -->
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
@@ -78,7 +78,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
+ -->
 			<!-- ####### Maven Test the Project using Surefire ######### -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
