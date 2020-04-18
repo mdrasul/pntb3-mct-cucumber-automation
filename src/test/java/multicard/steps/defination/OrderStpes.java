@@ -2,7 +2,7 @@ package multicard.steps.defination;
 
 import org.junit.Assert;
 
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Then;
 import multicard.steps.support.MctTestHelper;
 
 public class OrderStpes {

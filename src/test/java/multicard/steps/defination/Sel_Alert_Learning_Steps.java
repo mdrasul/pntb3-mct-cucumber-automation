@@ -3,9 +3,9 @@ package multicard.steps.defination;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import multicard.steps.support.MctTestHelper;
 
 public class Sel_Alert_Learning_Steps {

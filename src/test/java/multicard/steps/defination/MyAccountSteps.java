@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.junit.Assert;
 
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import multicard.steps.support.MctTestHelper;
 
 public class MyAccountSteps {
