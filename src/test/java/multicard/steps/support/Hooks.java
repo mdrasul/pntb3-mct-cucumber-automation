@@ -1,5 +1,6 @@
 package multicard.steps.support;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -44,6 +45,7 @@ public class Hooks {
 		}
 
 		System.out.println("Scenario Ended... ");
+		((JavascriptExecutor) testHelper.getDriver()).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
 		testHelper.getDriver().close();
 	}
 

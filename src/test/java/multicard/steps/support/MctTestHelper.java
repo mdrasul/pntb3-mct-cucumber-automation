@@ -1,5 +1,7 @@
 package multicard.steps.support;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.UnexpectedAlertBehaviour;
@@ -7,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import multicard.pages.object.model.HomePage;
@@ -32,14 +35,39 @@ public class MctTestHelper {
 	
 	public WebDriver getDriver() {
 		if(driver==null) {
-			WebDriverManager.chromedriver().setup();
+			
+			
+			// == Local where the Code  is creating driver there 
+//			WebDriverManager.chromedriver().setup();
+//			//Very Nice Thing to Work with 
+//			DesiredCapabilities dc = new DesiredCapabilities();
+//			dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+//			driver=new ChromeDriver(dc);
+//			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			
+			
+			
+			// == Creeate REmote Driver and send the test to Sauce Lab
+		    String username = 	"pntbatch3";
+		    String accesskey = "e1a74856-c3e2-4d27-9ab4-a6469164a479";
+		    
+	        DesiredCapabilities capabilities = new DesiredCapabilities();
+	        capabilities.setCapability(CapabilityType.BROWSER_NAME, "safari");
+	        capabilities.setCapability(CapabilityType.VERSION, "latest");
+	        capabilities.setCapability(CapabilityType.PLATFORM, "macOS 10.14");
+	        
+	        //capabilities.setCapability("commandTimeout","599");
+	        //capabilities.setCapability("idleTimeout","1000");	  
 
-			//Very Nice Thing to Work with 
-			DesiredCapabilities dc = new DesiredCapabilities();
-			dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+	        
+			try {
+				driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + "@ondemand.saucelabs.com:443/wd/hub"), capabilities);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 
-			driver=new ChromeDriver(dc);
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			
+			
 		}		
 		return driver;
 	}
