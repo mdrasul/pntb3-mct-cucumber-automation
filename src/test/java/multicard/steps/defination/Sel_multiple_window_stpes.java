@@ -5,7 +5,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 
-import cucumber.api.java.en.Given;
+import io.cucumber.java.en.Given;
 import multicard.steps.support.MctTestHelper;
 
 public class Sel_multiple_window_stpes {
