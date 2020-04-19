@@ -12,7 +12,7 @@ public class CuponPages extends MasterPage{
 	String endDate = "{xpath://tr[9]//td[3]//a[1]";
 	String persentageCupon = "{xpath://input[@id='txtCouponDiscount']";
 	String addButtonLink = "{xpath://input[@name='add']";
-	
+	//brlow everything will be the sendskey
 	//Value
 	String cCode="565565";
 	String sDate = "{xpath://font[contains(text(),'15')]";
