@@ -9,10 +9,12 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import multicard.pages.object.model.CuponPages;
 import multicard.pages.object.model.HomePage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
+import multicard.pages.object.model.SellerDashboardPage;
 import multicard.pages.object.model.SignUpPage;
 import multicard.test.data.User;
 
@@ -25,6 +27,8 @@ public class MctTestHelper {
 	private OrderPage order;
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
+	private SellerDashboardPage sellerDashboard;
+	private CuponPages cuponCodes;
 
 
 
@@ -90,6 +94,22 @@ public class MctTestHelper {
 		
 		return order;
 	}
+	
+	public SellerDashboardPage getSellerDashboard() {
+		if(sellerDashboard==null) {
+			sellerDashboard=new SellerDashboardPage(getDriver());
+		}
+		return sellerDashboard;
+	}
+	
+	public CuponPages getCuponPages() {
+		if(cuponCodes==null) {
+			cuponCodes=new CuponPages(getDriver());
+		}
+		return cuponCodes;
+		
+	}
+
 
 
 }

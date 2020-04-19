@@ -21,7 +21,7 @@ Feature: User My Account Activities
       | My Orders            |
       | Profile              |
       | My Return Requests   |
-      | Change Password-X-   |
+      | Change Password   |
       | My Favorite Products |
       | My Favorite Sellers  |
       | Seller Dashboard     |

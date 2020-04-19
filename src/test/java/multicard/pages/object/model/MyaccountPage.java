@@ -11,7 +11,8 @@ public class MyaccountPage extends MasterPage {
 	// Locators 
 	String myOrderLink = "{xpath://*[@id=\"item_details\"]/div[3]/div[1]/div/div[1]/a";
 	String optionsLink = "{xpath://a[contains(text(),'${XXRPCLXX}')]";
-	
+	String sellerDashboard="{xpath://a[contains(text(),'Seller Dashboard')]";
+
 	//Dynamic Xpath 
 	String allOptionsATag = "{xpath://div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a";
 	
@@ -46,6 +47,11 @@ public class MyaccountPage extends MasterPage {
 		clickElement(getWebElementBy(replaceLocatorsWith(optionsLink,option)));
 		return new ProfilePage(driver);
 	}
+	public SellerDashboardPage navigateToSellerDashboard() {
+		clickElement(getWebElementBy(sellerDashboard));
+		return new SellerDashboardPage(driver);
+		
+	}	
 	
 	
 	
