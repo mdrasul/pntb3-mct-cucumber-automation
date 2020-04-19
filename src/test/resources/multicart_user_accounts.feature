@@ -6,13 +6,6 @@ Feature: User My Account Activities
     Given I open browser chrome
     And I land on multicart landing page
     And I complete login with James valid credentails
-
-  #Scenario: User Sees individual account option
-  #When I navigate to my Account page
-  #Then I see options "My Orders" available
-  #Then I see options "Profile" available
-  #Then I see options "My Return Requests" available
-  #Then I see options "Change Password" available
  
  @wip 
  @mcttest
