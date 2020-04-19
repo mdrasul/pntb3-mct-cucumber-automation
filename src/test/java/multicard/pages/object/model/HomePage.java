@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage  extends MasterPage{
 		
-	// Locators 
+	// Locators of the xpaths
 	String profileNameLink ="{xpath://*[@id=\"dLabel\"]/span";
 	String myAccountLink  = "{xpath://*[@id=\"drp_div\"]/ul/li/div/div[1]/a";
 	String passwordErrorLabel = "{xpath://label[@id='password_error']";
