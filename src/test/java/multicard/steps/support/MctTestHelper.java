@@ -12,7 +12,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import multicard.pages.object.model.AccesoriesPage;
 import multicard.pages.object.model.HomePage;
+import multicard.pages.object.model.MyFavoriteSellersPage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
@@ -29,21 +31,23 @@ public class MctTestHelper {
 	private OrderPage order;
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
+	private AccesoriesPage accesories;
+	private MyFavoriteSellersPage myFavoriteSellers;
 
 	// Single Ton Mthods
 
 	public WebDriver getDriver() {
 		if (driver == null) {
-			if(SharedConfig.config.get("seleniumEnvironment").equals("Local")) {
+			if (SharedConfig.config.get("seleniumEnvironment").equals("Local")) {
 				// == Local where the Code is creating driver there
 				WebDriverManager.chromedriver().setup();
 				DesiredCapabilities dc = new DesiredCapabilities();
 				dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-				driver=new ChromeDriver(dc);
+				driver = new ChromeDriver(dc);
 				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-			} else if(SharedConfig.config.get("seleniumEnvironment").equals("Grid")) {
-				
+			} else if (SharedConfig.config.get("seleniumEnvironment").equals("Grid")) {
+
 				// == Creeate REmote Driver and send the test to Sauce Lab
 				String username = SharedConfig.config.get("Sauce-username");
 				String accesskey = SharedConfig.config.get("Sauce-accesskey");
@@ -58,17 +62,17 @@ public class MctTestHelper {
 
 				try {
 					driver = new RemoteWebDriver(
-							 new URL("https://" + username + ":" + accesskey + "@ondemand.saucelabs.com:443/wd/hub"),
-							 capabilities);
+							new URL("https://" + username + ":" + accesskey + "@ondemand.saucelabs.com:443/wd/hub"),
+							capabilities);
 				} catch (MalformedURLException e) {
 					e.printStackTrace();
 				}
-				
-				// To  DO  Add:  the Implicitt Wait For Sauce REmote Driver 
+
+				// To DO Add: the Implicitt Wait For Sauce REmote Driver
 			}
-			
+
 		}
-		
+
 		return driver;
 	}
 
@@ -118,4 +122,22 @@ public class MctTestHelper {
 		return order;
 	}
 
+	public AccesoriesPage getAccesories() {
+
+		if (accesories == null) {
+			accesories = new AccesoriesPage(getDriver());
+		}
+
+		return accesories;
+
+	}
+
+	public MyFavoriteSellersPage getMyFavoriteSellers() {
+
+		if (myFavoriteSellers == null) {
+			myFavoriteSellers = new MyFavoriteSellersPage(getDriver());
+		}
+
+		return myFavoriteSellers;
+	}
 }
