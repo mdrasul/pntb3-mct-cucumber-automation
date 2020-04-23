@@ -13,10 +13,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import multicard.pages.object.model.HomePage;
+import multicard.pages.object.model.SellerHomePage;
+import multicard.pages.object.model.MyDashBoardPage;
+import multicard.pages.object.model.MyProductPage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
 import multicard.pages.object.model.SignUpPage;
+import multicard.test.data.Seller;
 import multicard.test.data.User;
 import multicard.util.SharedConfig;
 
@@ -24,11 +28,16 @@ public class MctTestHelper {
 
 	private WebDriver driver;
 	private User james;
+	private Seller seller;
+	
 	private HomePage home;
+	private SellerHomePage SellerHome;
 	private MyaccountPage myaccount;
 	private OrderPage order;
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
+	private MyDashBoardPage mydashboard;
+	private MyProductPage myProduct;
 
 	// Single Ton Mthods
 
@@ -116,6 +125,45 @@ public class MctTestHelper {
 		}
 
 		return order;
+	}
+	
+	public Seller getSeller() {
+		
+		if(seller==null) {
+			
+			seller = new Seller();
+		}
+		
+		return seller;
+	}
+	
+	public SellerHomePage getSellerHome() {
+		
+		if(SellerHome==null) {
+			
+			SellerHome = new SellerHomePage(getDriver());
+		}
+		return SellerHome;
+		
+	}
+	
+	public MyProductPage getMyProduct() {
+		
+		if(myProduct==null) {
+			
+			myProduct = new MyProductPage(getDriver());
+		}
+		return myProduct;
+		
+	}
+	
+	public MyDashBoardPage getMyDashBoard() {
+
+		if (mydashboard == null) {
+			mydashboard = new MyDashBoardPage(getDriver());
+		}
+
+		return mydashboard;
 	}
 
 }
