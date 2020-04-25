@@ -15,6 +15,8 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
+	String affiliateButton = "{xpath://a[contains(text(),'Affiliates')]";
+	String affiliateRegButton = "{xpath://a[@class='reg_now_link']\r\n";
 
 
 	
@@ -64,6 +66,11 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
-
+	public AffiliateRegPage navigateToAffilateRegPage() {
+		
+		clickElement(getWebElementBy(affiliateButton));
+		clickElement(getWebElementBy(affiliateRegButton));
+		return new AffiliateRegPage(driver);
+	}
 
 }

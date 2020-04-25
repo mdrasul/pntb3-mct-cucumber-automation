@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import multicard.pages.object.model.AffiliateRegPage;
 import multicard.pages.object.model.HomePage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
@@ -28,6 +29,7 @@ public class MctTestHelper {
 	private MyaccountPage myaccount;
 	private OrderPage order;
 	private SignUpPage signUpPage;
+	public AffiliateRegPage affiliateRegPage;
 	private ProfilePage profilePage;
 
 	// Single Ton Mthods
@@ -91,6 +93,13 @@ public class MctTestHelper {
 			signUpPage = new SignUpPage(getDriver());
 		}
 		return signUpPage;
+	}
+	
+	public AffiliateRegPage getAffiliateRegPage() {
+		if (affiliateRegPage == null) {
+			affiliateRegPage = new AffiliateRegPage(getDriver());
+		}
+		return affiliateRegPage;
 	}
 
 	public ProfilePage getProfilePage() {
