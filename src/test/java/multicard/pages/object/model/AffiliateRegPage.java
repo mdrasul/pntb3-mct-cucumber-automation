@@ -50,6 +50,7 @@ public class AffiliateRegPage extends MasterPage {
 		typeText(getWebElementBy(arFaxField), "123-456-7890");
 		typeText(getWebElementBy(arEmailField), userValue+"@gmail.com");
 		clickElement(getWebElementBy(arRegisterField));
+		
 	}
 
 }
