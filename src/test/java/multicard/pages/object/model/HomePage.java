@@ -18,6 +18,7 @@ public class HomePage  extends MasterPage{
 	String affiliateButton = "{xpath://a[contains(text(),'Affiliates')]";
 	String affiliateRegButton = "{xpath://a[@class='reg_now_link']\r\n";
 
+	
 
 	
 	/** Constructor */
