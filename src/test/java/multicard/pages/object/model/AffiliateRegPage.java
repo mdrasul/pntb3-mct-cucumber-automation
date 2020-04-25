@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AffiliateRegPage extends MasterPage {
 
-
+	//all xpath aff reg fields
 	String arUsernameField = "{xpath://input[@id='txtUserName']";
 	String arPasswordField = "{xpath://input[@name='txtPassword']";
 	String arCnfPasswordField = "{xpath://input[@name='txtCnfPassword']";
