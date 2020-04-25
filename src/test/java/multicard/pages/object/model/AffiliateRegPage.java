@@ -26,7 +26,6 @@ public class AffiliateRegPage extends MasterPage {
 
 	public AffiliateRegPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	
