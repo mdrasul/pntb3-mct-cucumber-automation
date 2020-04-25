@@ -40,4 +40,20 @@ public class SignUpPage extends MasterPage {
 		clickElement(getWebElementBy(createAcctButton));
 	}
 	
+	public void sellerSignUp() {
+		// Generating A Random Number For Sample user
+        Random rand = new Random(); 
+        int rand_int1 = rand.nextInt(1000); 
+		String userValue = "testuser" + rand_int1;
+		
+		typeText(getWebElementBy(emailField), userValue+"@gmail.com");
+		typeText(getWebElementBy(regUserNameField), userValue);
+		typeText(getWebElementBy(regPasswordField), "ABC123");
+		typeText(getWebElementBy(regConfPasswordField), "ABC123");		
+		typeText(getWebElementBy(firstNameField), "MR");
+		typeText(getWebElementBy(lastNameField), userValue);
+		typeText(getWebElementBy(addressField), "123 Fifth Ave");
+		clickElement(getWebElementBy(createAcctButton));
+	}
+	
 }

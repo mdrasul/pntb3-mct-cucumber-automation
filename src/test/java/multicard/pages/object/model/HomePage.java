@@ -15,6 +15,10 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
+	String sellerButton = "{xpath://a[contains(text(),'Sellers')]";
+	String registerButton = "{xpath://section[@class='sec_marg']//input[2]";
+	
+
 
 
 	
@@ -63,6 +67,21 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(signUpButton));
 		return new SignUpPage(driver);
 	}
+	
+public SignUpPage navigateToSellerSignUpPage() {
+		
+		clickElement(getWebElementBy(sellerButton));
+		clickElement(getWebElementBy(registerButton));
+		return new SignUpPage(driver);
+	}
+
+public SellerSignUpPage navigateToSellerSignUpPage() {
+	
+	clickElement(getWebElementBy(sellerButton));
+	clickElement(getWebElementBy(registerButton));
+	return new SellerSignUpPage(driver);
+}
+
 
 
 
