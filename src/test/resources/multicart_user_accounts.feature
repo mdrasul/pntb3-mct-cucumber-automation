@@ -8,7 +8,7 @@ Feature: User My Account Activities
     And I complete login with James valid credentails
  
   
- @mcttest
+ 
   Scenario: User Sees all Account Options
     When I navigate to my Account page
     Then I see all aviable options below

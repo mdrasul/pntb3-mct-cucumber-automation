@@ -11,7 +11,7 @@ Feature: As a Seller I want to perform all products related activities
   	When I complite login for Seller valid credentials
     
   
-  @wip
+  
   Scenario: Product Table
     And I navigate to product page
     Then I expect to see product table

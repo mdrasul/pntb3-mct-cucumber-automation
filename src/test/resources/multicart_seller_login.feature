@@ -8,7 +8,7 @@ Feature: Seller Login Mechanism
     And I land on multicart landing page
     And I complete login with James valid credentails
     Then I navigate to my DASHBORD page
-@wip
+
   Scenario: Landing on MCT Seller Home Page
   	
     When I complite login for Seller valid credentials

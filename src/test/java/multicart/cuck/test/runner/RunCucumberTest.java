@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 		glue={"multicard.steps.defination", "multicard.steps.support"},
 		plugin = {"pretty", "json:target/cucumber-reports/cucumber.json", "html:target/cucumber-reports"}, 
 		
-		tags = {"@wip"},
+		//tags = {"@wip"},
 		monochrome=true
 		)
 public class RunCucumberTest extends AbstractTestNGCucumberTests {

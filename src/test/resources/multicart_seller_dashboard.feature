@@ -2,7 +2,7 @@ Feature: Seller DASHBOARD Activities
   As a Seller I want to go to my DASHBOARD
   SO i can perform all activities
 
-	@wip
+	
   Scenario: Langing on MCT Home Page
     Given I open browser chrome
     And I land on multicart landing page
