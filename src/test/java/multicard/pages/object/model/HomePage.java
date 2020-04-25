@@ -19,8 +19,6 @@ public class HomePage  extends MasterPage{
 	String affiliateRegButton = "{xpath://a[@class='reg_now_link']\r\n";
 
 	
-
-	
 	/** Constructor */
 	public HomePage(WebDriver driver) {
 		super(driver); 
