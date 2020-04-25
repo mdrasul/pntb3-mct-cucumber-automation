@@ -23,6 +23,7 @@ public class MasterPage {
 	/**
 	 * Generic browser Action Types Methods All Those Below Mthods Will Supply to
 	 * its Childs TO Fo COmmpn Action Like Type() Click() isElementExist()
+	 * 
 	 */
 
 	public void typeText(WebElement targetWebElement, String texttobeWrite) {
