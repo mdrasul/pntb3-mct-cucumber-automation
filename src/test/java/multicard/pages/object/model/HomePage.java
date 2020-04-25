@@ -22,7 +22,7 @@ public class HomePage  extends MasterPage{
 	
 	/** Constructor */
 	public HomePage(WebDriver driver) {
-		super(driver); //hahaha
+		super(driver); 
 	}
 
 	public void gotoHomePage() {
