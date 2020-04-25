@@ -15,8 +15,8 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
-
-
+	String searchGlassinputBox = "{xpath://input[@placeholder='Search']";
+	
 	
 	/** Constructor */
 	public HomePage(WebDriver driver) {
@@ -64,6 +64,9 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
-
+	public void searchwithKey(String searchKey) {
+		clickElement(getWebElementBy(searchGlassinputBox));
+		typeText(getWebElementBy(searchGlassinputBox),searchKey);
+	}
 
 }
