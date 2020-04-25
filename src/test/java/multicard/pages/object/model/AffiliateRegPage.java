@@ -35,7 +35,6 @@ public class AffiliateRegPage extends MasterPage {
 		int rand_int1 = rand.nextInt(1000); 
 		String userValue = "testaffreg" + rand_int1;
 
-		//typeText(getWebElementBy(arUsernameField), userValue);
 		typeText(getWebElementBy(arUsernameField), "userdummy2");
 		typeText(getWebElementBy(arPasswordField), "ABC123");
 		typeText(getWebElementBy(arCnfPasswordField), "ABC123");		
