@@ -45,7 +45,6 @@ public class LoginSteps {
 		// Do Login [ Home Page ] 
 		String expectedErrorText = "Enter password";
 		String actualErrorText = testHelper.getHome().getPasswordErrorText();
-		
 		Assert.assertEquals("No Password Error Text Found..", expectedErrorText, actualErrorText );
 
 	}

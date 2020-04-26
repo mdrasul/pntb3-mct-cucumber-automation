@@ -112,7 +112,7 @@ public class MasterPage {
 	/** Helper Functions */
 
 	public void explicitLookForElement(String locators) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		WebElement tempWebElement = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locators.split(":")[1])));
 	}
@@ -135,7 +135,8 @@ public class MasterPage {
 		}
 
 		if (tempWebElement != null) {
-			highlightElementBackground(tempWebElement, "pass");
+//			highlightElementBackground(tempWebElement, "pass");
+			highlightElement(tempWebElement, "pass");
 		}
 
 		return tempWebElement;
@@ -176,9 +177,9 @@ public class MasterPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		if (flag.equalsIgnoreCase("pass")) {
-			js.executeScript("arguments[0].style.border='2px groove green'", element);
+			js.executeScript("arguments[0].style.border='8px groove green'", element);
 		} else {
-			js.executeScript("arguments[0].style.border='2px solid red'", element);
+			js.executeScript("arguments[0].style.border='8px solid red'", element);
 
 		}
 		uglyWaitFor(2000);

@@ -1,0 +1,8 @@
+First I added multicart_user_Home.feature in project
+Second I added HomeSteps in multicard.steps.defination
+Third I added HomePage in Multicard.pages.object.model
+Fouth I added ShoppingCartPage in Multicard.pages.object.model
+Fifth I added ShoppingCartSteps in multicard.steps.defination
+Sixth I added constructor in Both Steps.
+Seventh I added tags=@Manir.
+Eighth I change Highlighter to highlightElement for green solid line 

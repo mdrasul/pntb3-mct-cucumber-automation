@@ -15,8 +15,13 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
-
-
+    String search_label="{xpath://input[@placeholder='Search']";
+    String searchText_label="{xpath://*[@id=\"search_header_top\"]/form/input[4]";
+    String search_label2="{xpath://*[@id=\"search_header_btt\"]";
+    String slimFit_label="{xpath://a[contains(text(),'Slim Fit Solid Formal Shi..')]";
+    String No_Results_Found_label="{xpath://*[@id=\"items_display_area\"]/div";
+    String BuyNow_label="{xpath:/html/body/div[3]/div/div[1]/div/div[1]/div[2]/div[1]/div[6]/button";
+ 
 	
 	/** Constructor */
 	public HomePage(WebDriver driver) {
@@ -64,6 +69,45 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
+	public void writeInSearch_SLIM_FIT_SOLID_FORMA(String write1) {
+		// TODO Auto-generated method stub
+		clickElement(getWebElementBy(search_label));
+		typeText(getWebElementBy(searchText_label),write1);
+		clickElement(getWebElementBy(search_label2));
+		
+	}
 
+	public String getSlim_Fit_Solid_Forma() {
+		// TODO Auto-generated method stub
+	     return getElementText(getWebElementBy(slimFit_label));
+		}
+
+	
+	public void writeInSearch_abcd(String write2) {
+		// TODO Auto-generated method stub
+		clickElement(getWebElementBy(search_label));
+		typeText(getWebElementBy(searchText_label),write2);
+		clickElement(getWebElementBy(search_label2));
+		
+	}
+	public String getTextNo_Results_Found() {
+		// TODO Auto-generated method stub
+	     return getElementText(getWebElementBy(No_Results_Found_label));
+		}
+
+	public ShoppingCartPage NavigateToShoppingCartPage() {
+		// TODO Auto-generated method stub
+		clickElement(getWebElementBy(slimFit_label));
+		clickElement(getWebElementBy(BuyNow_label));
+		
+		return new ShoppingCartPage(driver);
+	}
+
+	public void writeInSearch_Slim_Fit(String write3) {
+		// TODO Auto-generated method stub
+		clickElement(getWebElementBy(search_label));
+		typeText(getWebElementBy(searchText_label),write3);
+		clickElement(getWebElementBy(search_label2));
+	}
 
 }
