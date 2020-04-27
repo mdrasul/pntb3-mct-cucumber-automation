@@ -14,7 +14,7 @@ Feature: User My Account Activities
   #Then I see options "My Return Requests" available
   #Then I see options "Change Password" available
   
- @mcttest
+ 
   Scenario: User Sees all Account Options
     When I navigate to my Account page
     Then I see all aviable options below
