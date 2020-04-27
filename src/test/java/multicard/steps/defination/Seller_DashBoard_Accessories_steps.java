@@ -31,6 +31,7 @@ public class Seller_DashBoard_Accessories_steps {
 		testHelper.getDashBoard().clickCatalogbtn();
 	}
 
+//
 	@When("I see catalog i click on Accessories link")
 	public void i_see_catalog_i_click_on_Accessories_link() {
 		testHelper.getDashBoard().clickOnAccessoriesLink();
