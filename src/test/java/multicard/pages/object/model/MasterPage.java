@@ -45,6 +45,7 @@ public class MasterPage {
 	public String getElementText(WebElement targetWebElement) {
 		return targetWebElement.getText();
 	}
+	
 
 	public boolean getElementsCount(String locators) {
 
@@ -61,7 +62,7 @@ public class MasterPage {
 
 		return false;
 	}
-
+	
 	public void selectImteFromDropDown(WebElement targetWebElement, String itemToSelect) {
 		Select selectElement = new Select(targetWebElement);
 		selectElement.selectByVisibleText(itemToSelect);

@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import multicard.steps.support.MctTestHelper;
 
 public class HomeSteps {
@@ -63,6 +64,18 @@ public class HomeSteps {
 		testHelper.getHome().NavigateToShoppingCartPage();
 		System.out.println("Successfully Navigate To Shopping Cart Page ");
 	}
+	@When("I want to go to Seller login option")
+	public void i_want_to_go_to_Seller_login_option() {
+	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+		testHelper.getHome().goToSellerLoginoption();
+	}
 
+	@And("I want to login as as seller and landing seller Page")
+	public void i_want_to_login_as_as_seller_and_landing_seller_Page() {
+	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+		testHelper.getHome().NavigateToSellerPage("seller","seller");
+	}
 
 }

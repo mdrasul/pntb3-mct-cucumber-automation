@@ -21,9 +21,12 @@ public class HomePage  extends MasterPage{
     String slimFit_label="{xpath://a[contains(text(),'Slim Fit Solid Formal Shi..')]";
     String No_Results_Found_label="{xpath://*[@id=\"items_display_area\"]/div";
     String BuyNow_label="{xpath:/html/body/div[3]/div/div[1]/div/div[1]/div[2]/div[1]/div[6]/button";
- 
-	
-	/** Constructor */
+    String seller_label="{xpath://*[@id=\"footersection\"]/section/div[3]/div/ul/li[2]/a";
+    String sellerLog_label="{xpath:/html/body/div[2]/div[1]/div[1]/div[1]/div/form/section/div[2]/div/input[1]";
+    String selleruser_label="{xpath://*[@id=\"txtUserName\"]";
+    String sellerpwd_label="{xpath://*[@id=\"txtPassword\"]";
+    String sellerlogin_label="{xpath://*[@id=\"item_details\"]/div[2]/div[3]/div/form/div/div[4]/div/input[1]";
+    /** Constructor */
 	public HomePage(WebDriver driver) {
 		super(driver); // Master Please Use this Driver
 	}
@@ -110,4 +113,19 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(search_label2));
 	}
 
+	public void goToSellerLoginoption() {
+		// TODO Auto-generated method stub
+		clickElement(getWebElementBy(seller_label));
+		clickElement(getWebElementBy(sellerLog_label));
+	}
+
+	public SellerPage NavigateToSellerPage(String uid,String pwd) {
+		// TODO Auto-generated method stub
+		typeText(getWebElementBy(selleruser_label),uid);
+		typeText(getWebElementBy(sellerpwd_label),pwd);
+		clickElement(getWebElementBy(sellerlogin_label));
+		return new SellerPage(driver);
+	}
+
+	
 }

@@ -16,6 +16,7 @@ import multicard.pages.object.model.HomePage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
+import multicard.pages.object.model.SellerPage;
 import multicard.pages.object.model.ShoppingCartPage;
 import multicard.pages.object.model.SignUpPage;
 import multicard.test.data.User;
@@ -31,6 +32,7 @@ public class MctTestHelper {
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
 	private ShoppingCartPage shoppingcartPage;
+	private SellerPage sellerpage;
 	// Single Ton Mthods
 
 	public WebDriver getDriver() {
@@ -125,5 +127,11 @@ public class MctTestHelper {
 		}
 
 		return shoppingcartPage;
+	}
+	public SellerPage getsellerpage() {
+		if(sellerpage==null) {
+			sellerpage=new SellerPage(getDriver());
+			}
+		return sellerpage;
 	}
 }

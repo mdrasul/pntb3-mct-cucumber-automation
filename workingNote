@@ -3,6 +3,10 @@ Second I added HomeSteps in multicard.steps.defination
 Third I added HomePage in Multicard.pages.object.model
 Fouth I added ShoppingCartPage in Multicard.pages.object.model
 Fifth I added ShoppingCartSteps in multicard.steps.defination
-Sixth I added constructor in Both Steps.
+Sixth I added constructor in all new Steps I added.
 Seventh I added tags=@Manir.
-Eighth I change Highlighter to highlightElement for green solid line 
+Eighth I change HighlighterBackground to highlightElement(border) for green solid line 
+Nine I added multicart_user_Seller.feature in project
+Ten I added SellerSteps in multicard.steps.defination
+Elaven  I added SellerPage in Multicard.pages.object.model
+Twelve I getter method to MctTestHelper class for all steps I added
