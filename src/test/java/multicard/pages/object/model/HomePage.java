@@ -2,6 +2,8 @@ package multicard.pages.object.model;
 
 import org.openqa.selenium.WebDriver;
 
+
+
 public class HomePage  extends MasterPage{
 		
 	// Locators 
@@ -64,6 +66,9 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
+
+	
+	
 
 
 }
