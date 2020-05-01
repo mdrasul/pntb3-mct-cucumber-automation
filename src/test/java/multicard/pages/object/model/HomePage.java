@@ -1,5 +1,6 @@
 package multicard.pages.object.model;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage  extends MasterPage{
@@ -15,7 +16,7 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
-
+	String aboutUsFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[1]/a";
 
 	
 	/** Constructor */
@@ -62,6 +63,18 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(loginLink));
 		clickElement(getWebElementBy(signUpButton));
 		return new SignUpPage(driver);
+	}
+
+	public void scrollToBottom() {
+		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
+		
+	}
+
+	public boolean validateGetToKnow() {
+		
+		
+		return isElementExist(getWebElementBy(aboutUsFooter));
+		
 	}
 
 
