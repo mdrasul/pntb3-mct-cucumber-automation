@@ -15,7 +15,7 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
-
+	String myCatagoryLink = "{xpath://html/body/div[2]/div[1]/div[1]/div/ul[1]/li[1]/div/div/a";
 
 	
 	/** Constructor */
@@ -64,6 +64,10 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
-
+	public MyCatagoryPage navigateToMyCatagoryPage() {
+		clickElement(getWebElementBy(myCatagoryLink));
+		return new MyCatagoryPage(driver);
+		
+	}
 
 }

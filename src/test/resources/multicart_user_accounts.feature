@@ -7,8 +7,7 @@ Feature: User My Account Activities
     And I land on multicart landing page
     And I complete login with James valid credentails
  
- @wip 
- @mcttest
+
   Scenario: User Sees all Account Options
     When I navigate to my Account page
     Then I see all aviable options below
