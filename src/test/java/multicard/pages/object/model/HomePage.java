@@ -1,5 +1,7 @@
 package multicard.pages.object.model;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 public class HomePage  extends MasterPage{
@@ -15,6 +17,24 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
+    
+	// Locators For Footers
+
+		String allFooterLinks = "{xpath://div[@class='footersep_inner']";
+
+		String aboutUsLink = "{xpath://a[contains(text(),'About Us')]";
+
+		String ViewCartLink = "{xpath://a[contains(text(),'View Cart')]";
+
+		String affiliatesLink = "{xpath://a[contains(text(),'Affiliates')]";
+
+		// Locators For Social Links
+
+		String twitterLink = "{xpath://a[@title = 'Twitter']";
+		String multicartTwitterPage = "https://twitter.com/multicart";
+
+		String facebookLink = "{xpath://a[@title = 'Facebook']";
+		String multicartFacebookPage = "https://www.facebook.com/iscripts";
 
 
 	
@@ -63,6 +83,56 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(signUpButton));
 		return new SignUpPage(driver);
 	}
+	
+
+	/** Methods for all Footer Links Availability And Assertion **/
+
+	public List<String> getallFooterLinksText() {
+		return getElementsTextAsList(getWebElements(allFooterLinks));
+
+	}
+
+	public boolean isAllFooterLinksAvailable() {
+		return isElementExist(getWebElementBy(allFooterLinks));
+	}
+
+	/** Methods for Footer Links Activity **/
+
+	public void checkAboutUsLink() {
+		clickElement(getWebElementBy(aboutUsLink));
+	}
+
+	public void checkViewCartLink() {
+		clickElement(getWebElementBy(ViewCartLink));
+
+	}
+
+	public void checkAffiliatestLink() {
+		clickElement(getWebElementBy(affiliatesLink));
+	}
+
+	/** Methods for Footer Social Links Activity And Assertion **/
+
+	public void clickTwitterLink() {
+		clickElement(getWebElementBy(twitterLink));
+	}
+
+	public String redirectToTwitterPage() {
+		driver.navigate().to(multicartTwitterPage);
+		return driver.getCurrentUrl();
+
+	}
+
+	public void clickFacebookLink() {
+		clickElement(getWebElementBy(facebookLink));
+	}
+
+	public String redirectToFacebookPage() {
+		driver.navigate().to(multicartFacebookPage);
+		return driver.getCurrentUrl();
+
+	}
+
 
 
 

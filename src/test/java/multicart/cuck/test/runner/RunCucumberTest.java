@@ -5,10 +5,10 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-		features = {"src/test/resources/"}, 
+		features = {"src/test/resources/multicart_footers_functionality.feature"}, 
 		glue={"multicard.steps.defination", "multicard.steps.support"},
 		plugin = {"pretty", "json:target/cucumber-reports/cucumber.json", "html:target/cucumber-reports"}, 
-		tags = {"@mcttest"},
+//		tags = {"@mcttest"},
 		monochrome=true
 		)
 public class RunCucumberTest extends AbstractTestNGCucumberTests {

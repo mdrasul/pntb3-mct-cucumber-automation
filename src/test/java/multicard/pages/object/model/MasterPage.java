@@ -72,6 +72,12 @@ public class MasterPage {
 //		}
 
 	}
+	
+	public void selectItemFromDropDownByIndex(WebElement targetWebElement, int indexNo) {
+		Select selectElement = new Select(targetWebElement);
+		selectElement.selectByIndex(indexNo);
+
+	}
 
 	// Functions Returns A COmplete Array List Back to its Caller
 	public List<String> getElementsTextAsList(List<WebElement> webElements) {
