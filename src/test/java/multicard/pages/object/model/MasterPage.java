@@ -65,7 +65,7 @@ public class MasterPage {
 	public void selectImteFromDropDown(WebElement targetWebElement, String itemToSelect) {
 		Select selectElement = new Select(targetWebElement);
 		selectElement.selectByVisibleText(itemToSelect);
-
+		//selectElement.selectByIndex(itemToSelect);
 //		List<WebElement> allitemInDropDown = selectElement.getOptions();
 //		for(int i=0;i<allitemInDropDown.size();i++) {
 //			System.out.println(allitemInDropDown.get(0).getText());
