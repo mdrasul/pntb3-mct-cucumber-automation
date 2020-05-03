@@ -17,6 +17,7 @@ import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
 import multicard.pages.object.model.SignUpPage;
+import multicard.pages.object.model.accessoriesPage;
 import multicard.test.data.User;
 import multicard.util.SharedConfig;
 
@@ -29,6 +30,7 @@ public class MctTestHelper {
 	private OrderPage order;
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
+	private accessoriesPage accessories;
 
 	// Single Ton Mthods
 
@@ -116,6 +118,15 @@ public class MctTestHelper {
 		}
 
 		return order;
+	}
+
+public accessoriesPage getAccessories() {
+		
+		if(accessories==null) {
+			accessories=new accessoriesPage(getDriver());
+		}		
+		
+		return accessories;
 	}
 
 }

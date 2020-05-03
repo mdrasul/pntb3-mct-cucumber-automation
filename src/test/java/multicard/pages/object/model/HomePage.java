@@ -1,5 +1,6 @@
 package multicard.pages.object.model;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage  extends MasterPage{
@@ -15,6 +16,8 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
+	String accessoriesLink = "{xpath://div[@id='categories']//a[1]";
+    
 
 
 	
@@ -63,6 +66,18 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(signUpButton));
 		return new SignUpPage(driver);
 	}
+	
+	 public accessoriesPage naviagateToAccessoriesPage() {
+			
+		 try {
+		
+			 clickElement(getWebElementBy(accessoriesLink));
+		 }
+		 catch(StaleElementReferenceException e) {
+			 clickElement(getWebElementBy(accessoriesLink));
+		 }
+			return new accessoriesPage(driver);
+		}
 
 
 
