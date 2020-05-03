@@ -7,4 +7,6 @@ Feature: Validate Footer links
  @mcttest
   Scenario: User validates footer links
     And I scroll to bottom of page
-    Then I see all avaiable footer links
+    Then I see all avaiable first column footer links
+		Then I see all available second column footer link
+    

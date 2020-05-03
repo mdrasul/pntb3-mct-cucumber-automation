@@ -16,8 +16,26 @@ public class HomePage  extends MasterPage{
 	String passwordTextBox = "{xpath://*[@id='password']";
 	String loginButton = "{xpath://*[@id='jqLogin']";
 	String signUpButton = "{xpath://button[@id='jqSignup']";
+	
+	
+	
+	//***Rownak Bootcamp Locators**************************
 	String aboutUsFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[1]/a";
-
+	String fAQFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[2]/a";
+	String helpFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[3]/a";
+	String siteFeedbackFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[4]/a";
+	String termsAndCondFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[5]/a";
+	String contactUsFooter = "{xpath://*[@id=\"footersection\"]/section/div[1]/div/ul/li[6]/a";
+	
+	//***Rownak Bootcamp Locators**************************
+	String comboProdFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[1]/a";
+	String newProductsFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[2]/a";
+	String featuredProductsFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[3]/a";
+	String categoriesFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[4]/a";
+	String viewCartFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[5]/a";
+	String giftCertFooter = "{xpath://*[@id=\"footersection\"]/section/div[2]/div/ul/li[6]/a";
+	
+	
 	
 	/** Constructor */
 	public HomePage(WebDriver driver) {
@@ -65,18 +83,64 @@ public class HomePage  extends MasterPage{
 		return new SignUpPage(driver);
 	}
 
+	
+	
+	//********************************************************
 	public void scrollToBottom() {
-		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
-		
+		((JavascriptExecutor)driver).executeScript("scroll(0,1000)");		
 	}
-
-	public boolean validateGetToKnow() {
-		
-		
+	
+	//********************************************************
+	public boolean validateAboutUs() {
 		return isElementExist(getWebElementBy(aboutUsFooter));
-		
 	}
+	//********************************************************
+	public boolean validateFAQ() {
+		return isElementExist(getWebElementBy(fAQFooter));
+	}
+	//********************************************************
 
+	public boolean validateHelp() {
+		return isElementExist(getWebElementBy(helpFooter));
+	}
+	//********************************************************
+
+	public boolean validateSiteFeedback() {
+		return isElementExist(getWebElementBy(siteFeedbackFooter));
+	}
+	//********************************************************
+	
+	public boolean validateTermsCond() {
+		return isElementExist(getWebElementBy(termsAndCondFooter));
+	}
+	//********************************************************	
+	public boolean validateContact() {
+		return isElementExist(getWebElementBy(contactUsFooter));
+	}
+	//********************************************************
+	public boolean validatecomboProd() {
+		return isElementExist(getWebElementBy(comboProdFooter));
+	}
+	//********************************************************
+	public boolean validatenewProducts() {
+		return isElementExist(getWebElementBy(newProductsFooter));
+	}
+	//********************************************************
+	public boolean validatefeaturedProducts() {
+		return isElementExist(getWebElementBy(featuredProductsFooter));
+	}
+	//********************************************************
+	public boolean validatecategories() {
+		return isElementExist(getWebElementBy(categoriesFooter));
+	}
+	//********************************************************
+	public boolean validateviewCart() {
+		return isElementExist(getWebElementBy(viewCartFooter));
+	}
+	//********************************************************
+	public boolean validategiftCert() {
+		return isElementExist(getWebElementBy(giftCertFooter));
+	}
 
 
 }
