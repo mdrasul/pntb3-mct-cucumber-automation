@@ -1,5 +1,9 @@
 Chris Zhang
 
-Revised seller signup page
+Added navigate to seller signup
 
-Thanks!
+Added seller signup steps
+
+Added multicart seller signup cucumber feature
+
+Added variables and methods in Homepage and MctTestHelper class
