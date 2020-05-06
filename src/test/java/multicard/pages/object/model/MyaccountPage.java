@@ -14,7 +14,7 @@ public class MyaccountPage extends MasterPage {
 	
 	//Dynamic Xpath 
 	String allOptionsATag = "{xpath://div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a";
-	
+	String SkyVanityBag = "{xpath://*[@data=\"134\"]";
 	
 	/** Constructor */
 	public MyaccountPage(WebDriver driver) {
@@ -45,8 +45,6 @@ public class MyaccountPage extends MasterPage {
 	public ProfilePage navigateToOption(String option) {
 		clickElement(getWebElementBy(replaceLocatorsWith(optionsLink,option)));
 		return new ProfilePage(driver);
-	}
-	
-	
+	}	
 	
 }

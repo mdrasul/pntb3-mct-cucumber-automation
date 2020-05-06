@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import multicard.pages.object.model.HomePage;
+import multicard.pages.object.model.MyFavoritesPage;
 import multicard.pages.object.model.MyaccountPage;
 import multicard.pages.object.model.OrderPage;
 import multicard.pages.object.model.ProfilePage;
@@ -29,6 +30,7 @@ public class MctTestHelper {
 	private OrderPage order;
 	private SignUpPage signUpPage;
 	private ProfilePage profilePage;
+	private MyFavoritesPage myFavoPage;
 
 	// Single Ton Mthods
 
@@ -116,6 +118,15 @@ public class MctTestHelper {
 		}
 
 		return order;
+	}
+	
+	public MyFavoritesPage gettofavo() {
+		
+		if (myFavoPage == null) {
+			myFavoPage = new MyFavoritesPage(getDriver());
+		}
+
+		return myFavoPage;
 	}
 
 }
