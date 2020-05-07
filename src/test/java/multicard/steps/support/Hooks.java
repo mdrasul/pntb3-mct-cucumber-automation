@@ -44,6 +44,10 @@ public class Hooks {
 		testHelper.getJames().setID("user");
 		testHelper.getJames().setPassword("pass");
 		testHelper.getJames().setprofileName("JAMES WILLIAMS");
+		
+		testHelper.getSeller().setID("seller");
+		testHelper.getSeller().setPassword("seller");
+		testHelper.getSeller().setprofileName("Seller");
 	}
 
 	@After
