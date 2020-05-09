@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage  extends MasterPage{
 		
 	// Locators 
+	//Rahman is not using the locators now- will use them in future.
 	String profileNameLink ="{xpath://*[@id=\"dLabel\"]/span";
 	String myAccountLink  = "{xpath://*[@id=\"drp_div\"]/ul/li/div/div[1]/a";
 	String passwordErrorLabel = "{xpath://label[@id='password_error']";
@@ -31,17 +32,34 @@ public class HomePage  extends MasterPage{
 	
 	
 	// Page Specific Actions 
+
+//		//Rahman's test
+
 	public void doLogin(String id, String password) {
-		clickElement(getWebElementBy(loginLink));
-		typeText(getWebElementBy(userNameTextBox),id);
-		typeText(getWebElementBy(passwordTextBox),password);
-		clickElement(getWebElementBy(loginButton));
+		
+		TargetTag("LOGIN");
+		keyboardClick();
+		typeText(id);
+		System.out.println(id);
+		typeText(password);
+		//Rahman's test
+		keyboardClick();
+		keyboardClicktoBody();
+		TargetTag("JAMES WILLIAMS");
+		keyboardClick();
+		
 		//uglyWaitFor(2000);
 	}
-
+	///////
 	public String getProfileName() {
-		return getElementText(getWebElementBy(profileNameLink));
+		return getnewElementText("JAMES WILLIAMS");
 	}
+	
+	//////
+//	public String getProfileName() {
+//		return getElementText(getWebElementBy(profileNameLink));
+//	}
+
 
 	public String getPasswordErrorText() {
 		return getElementText(getWebElementBy(passwordErrorLabel));

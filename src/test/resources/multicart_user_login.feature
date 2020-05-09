@@ -7,7 +7,7 @@ Feature: User Login Mechanism
     Given I open browser chrome
     And I land on multicart landing page
 
-@mcttest
+@wip
   Scenario: Successfull login
     When I complete login with James valid credentails
     Then I expect to seee profile Name as James Williams

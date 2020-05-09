@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,14 +26,72 @@ public class MasterPage {
 	 * its Childs TO Fo COmmpn Action Like Type() Click() isElementExist()
 	 */
 
-	public void typeText(WebElement targetWebElement, String texttobeWrite) {
-		targetWebElement.sendKeys(texttobeWrite);
+//	public void typeText(WebElement targetWebElement, String texttobeWrite) {
+//		targetWebElement.sendKeys(texttobeWrite);
+//	}
+//
+//	public void clickElement(WebElement targetWebElement) {
+//		targetWebElement.click();
+//	}
+//	// Abdur Rahman's test begin
+//	public void tabForwardMovement(WebElement targetWebElement) {
+//		targetWebElement.click();
+//	}
+//	
+//	public void tabBackwardMovement(WebElement targetWebElement) {
+//		targetWebElement.click();
+//	}
+//	public void keyboardClick(WebElement targetWebElement) {
+//		targetWebElement.sendKeys(Keys.ENTER);
+//	}
+//Type text by Rahman
+	public void typeText(String texttobeWrite) {
+		driver.switchTo().activeElement().sendKeys(texttobeWrite);
+		driver.switchTo().activeElement().sendKeys(Keys.TAB);
 	}
 
 	public void clickElement(WebElement targetWebElement) {
 		targetWebElement.click();
 	}
+	// Rahman switching Keyboard stroke to clik
 
+	public void keyboardClick() {
+		//targetWebElement.sendKeys(Keys.ENTER);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+		driver.switchTo().activeElement().sendKeys(Keys.TAB);
+	}
+	//Rahman moving focus to Page body
+	public void keyboardClicktoBody() {
+		//targetWebElement.sendKeys(Keys.ENTER);
+		driver.switchTo().activeElement().sendKeys(Keys.TAB);
+		driver.switchTo().activeElement().sendKeys(Keys.TAB);
+	}
+	
+	//Rahman sending focus to  target tag
+	public void TargetTag(String strTargetTag) {
+		String strTagSearch=null;
+		do {
+			driver.switchTo().activeElement().sendKeys(Keys.TAB);
+			strTagSearch= driver.switchTo().activeElement().getText();
+		}while (!strTagSearch.equals(strTargetTag));
+	}
+	
+	//Rahman comparing text of Target tag with desired tag
+	public String getnewElementText(String strTargetTag) {
+		String strTagSearch=null;
+		do {
+			driver.switchTo().activeElement().sendKeys(Keys.TAB);
+			strTagSearch= driver.switchTo().activeElement().getText();
+		}while (!strTagSearch.equals(strTargetTag));
+		
+		return strTagSearch;
+	}
+
+/////
+	
+//	public String getElementText(WebElement targetWebElement) {
+//		return targetWebElement.getText();
+//	}
 	public boolean isElementExist(WebElement targetWebElement) {
 		try {
 			return targetWebElement.isDisplayed();
@@ -133,7 +192,6 @@ public class MasterPage {
 			explicitLookForElement(locators);
 			tempWebElement = driver.findElement(By.id(locators.split(":")[1]));
 		}
-
 		if (tempWebElement != null) {
 			highlightElementBackground(tempWebElement, "pass");
 		}
@@ -156,6 +214,8 @@ public class MasterPage {
 			explicitLookForElement(locators);
 			tempWebElements = driver.findElements(By.id(locators.split(":")[1]));
 		}
+		
+		
 
 //		if(tempWebElement!=null) {
 //			highlightElementBackground(tempWebElement, "pass");
@@ -174,14 +234,14 @@ public class MasterPage {
 
 	public void highlightElement(WebElement element, String flag) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
+		
 		if (flag.equalsIgnoreCase("pass")) {
 			js.executeScript("arguments[0].style.border='2px groove green'", element);
 		} else {
 			js.executeScript("arguments[0].style.border='2px solid red'", element);
 
 		}
-		uglyWaitFor(2000);
+		uglyWaitFor(3000);
 	}
 
 	public void highlightElementBackground(WebElement element, String flag) {
@@ -195,7 +255,7 @@ public class MasterPage {
 			js.executeScript("arguments[0].style.backgroundColor = '" + "red" + "'", element);
 		}
 
-		uglyWaitFor(500);
+		uglyWaitFor(1500);
 	}
 
 	public void highlightElementBorder(WebElement element, String flag) {
@@ -207,7 +267,7 @@ public class MasterPage {
 			js.executeScript("arguments[0].style.border='2px solid red'", element);
 
 		}
-		uglyWaitFor(2000);
+		uglyWaitFor(3000);
 	}
 
 	/**
