@@ -63,10 +63,9 @@ public class HomePage  extends MasterPage{
 		clickElement(getWebElementBy(signUpButton));
 		return new SignUpPage(driver);
 	}
-
     public void searchwithKey(String searchKey) {
     	clickElement(getWebElementBy(searchGlassInputBox));
-    	typeText(getWebElementBy(searchGlassInputBox),id);
+    	typeText(getWebElementBy(searchGlassInputBox),searchKey);
     }
 
 }
